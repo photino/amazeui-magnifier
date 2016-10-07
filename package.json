@@ -1,0 +1,45 @@
+{
+  "name": "amazeui-magnifier",
+  "version": "0.1.0",
+  "description": "Amaze UI图片放大镜插件",
+  "main": "dist/amazeui.magnifier.min.js",
+  "style": "dist/amazeui.magnifier.min.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/photino/amazeui-magnifier.git"
+  },
+  "keywords": [
+    "amazeui-plugin",
+    "amaze-ui",
+    "AMUI",
+    "image-magnifier",
+    "jquery-plugin"
+  ],
+  "author": {
+    "name": "Zan Pan",
+    "email": "panzan89@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/photino/amazeui-magnifier/issues"
+  },
+  "homepage": "http://photino.github.io/amazeui-magnifier/",
+  "license": "MIT",
+  "devDependencies": {
+    "amazeui-doc-util": "latest",
+    "amazeui-gulp-tasks": "latest",
+    "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.4",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "amazeui": "^2.7.0"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  }
+}

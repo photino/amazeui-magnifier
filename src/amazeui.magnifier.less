@@ -1,0 +1,43 @@
+/*! Amaze UI Plugin ~ magnifier */
+@import "../node_modules/amazeui/less/variables";
+@import "../node_modules/amazeui/less/mixins";
+
+/* magnifier */
+.am-magnifier {
+  display: inline-block;
+  position: relative;
+}
+
+.am-magnifier > img {
+  object-fit: contain;
+  cursor: crosshair;
+}
+
+.am-magnifier > div {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+
+.am-magnifier > div:not(:last-child) {
+  left: 0;
+  background-color: #000;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.am-magnifier > div:last-child {
+  left: 100%;
+  overflow: hidden;
+}
+
+.am-magnifier > div:last-child > img {
+  max-width: none;
+  object-fit: fill;
+  will-change: transform;
+}
+
+.am-magnifier > img:hover ~ div {
+  display: inline-block;
+}
