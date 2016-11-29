@@ -31,9 +31,19 @@
       var ax = width * width / $img.width();
       var ay = height * height / $img.height();
       var params = shape.split(/[^\w\.]+/);
-      var name = params[0];
-      var dx = +params[1] || ax;
-      var dy = +params[2] || ay;
+      var settings = {
+        shape: params[0],
+        width: +params[1] || ax,
+        height: +params[2] || ay,
+        offsetX: 0,
+        offsetY: 0
+      }
+      var $options = $.extend({}, settings, options);
+      var name = $options.shape;
+      var dx = $options.width;
+      var dy = (name === 'square') ? dx : $options.height;
+      var offsetX = $options.offsetX;
+      var offsetY = $options.offsetY;
       var xmax = width - dx;
       var ymax = height - dy;
       var sx = width / dx;
@@ -42,9 +52,9 @@
         $area.width(dx).height(dy);
       }
       $box.width(width).height(height);
-      $this.on('mousemove', function (event) {
-        var x = Math.min(Math.max(event.pageX - offset.left - dx / 2, 0), xmax);
-        var y = Math.min(Math.max(event.pageY - offset.top - dy / 2, 0), ymax);
+      $this.on('mousemove', function (e) {
+        var x = Math.min(Math.max(e.pageX - offset.left - dx / 2 + offsetX, 0), xmax);
+        var y = Math.min(Math.max(e.pageY - offset.top - dy / 2 + offsetY, 0), ymax);
         var t = 'translate(' + (-sx * x) + 'px, ' + (-sy * y) + 'px)';
         $area.css({
           left: x,
