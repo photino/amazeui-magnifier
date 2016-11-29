@@ -1,6 +1,6 @@
 {
   "name": "amazeui-magnifier",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Amaze UI图片放大镜插件",
   "main": "dist/amazeui.magnifier.min.js",
   "style": "dist/amazeui.magnifier.min.css",
